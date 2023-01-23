@@ -17,3 +17,12 @@ x_test = tf.keras.utils.normalize(
 model = tf.keras.models.Sequential()  # a basic feed-forward model
 model.add(tf.keras.layers.Flatten(input_shape=(28, 28)))  # input layer
 model.add(tf.keras.layers.Dense(128, activation='relu'))  # hidden layer
+model.add(tf.keras.layers.Dense(128, activation='relu'))  # hidden layer
+model.add(tf.keras.layers.Dense(10, activation='softmax'))  # output layer
+
+model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=[
+              'accuracy'])  # adam optimizer that minimizes the loss function
+
+model.fit(x_train, y_train)  # train the model
+
+model.save('handwritten.model')  # save the model
