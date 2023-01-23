@@ -23,6 +23,6 @@ model.add(tf.keras.layers.Dense(10, activation='softmax'))  # output layer
 model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=[
               'accuracy'])  # adam optimizer that minimizes the loss function
 
-model.fit(x_train, y_train)  # train the model
+model.fit(x_train, y_train, epochs=3)  # train the model
 
 model.save('handwritten.model')  # save the model
