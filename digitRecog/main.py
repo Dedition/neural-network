@@ -42,3 +42,7 @@ while os.path.isfile(f"digits/digit{image_number}.png"):
         print("Prediction: ", np.argmax(prediction))  # print the prediction
         plt.imshow(img[0], cmap=plt.cm.binary)  # show the image
         plt.show()
+    except:
+        print("Error")
+    finally:
+        image_number += 1
